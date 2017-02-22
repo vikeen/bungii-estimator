@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .row
+    .col-xs-offset-3.col-xs-6
+      form#estimator.form-horizontal(action="/" method="POST")
+        .form-group
+          label.control-label(for="orgin") Origin
+          input.form-control(name="origin", id="origin", value="#{origin}")
+        .form-group
+          label.control-label(for="destination") Destination
+          input.form-control(name="destination", id="destination", value="#{destination}")
+        .form-group
+          button.btn.btn-primary Get a Estimate
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading Results
+        .panel-body
+          pre#results
+            = results
